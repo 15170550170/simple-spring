@@ -1,0 +1,2 @@
+# simple-spring
+用于新手学习Spring源码之前，熟悉Spring框架的业务和运行的整个生命周期，为深入学习Spring源码打下较好的基础。
