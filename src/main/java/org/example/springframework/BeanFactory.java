@@ -10,8 +10,27 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author: youl.li
  * @create: 2024-11-27 11:37
  */
+/*
+* 作用：实现Bean的注册和获取
+* */
 public class BeanFactory {
-    Map<String, BeanDefinition> beans = new ConcurrentHashMap<String, BeanDefinition>();
+    private Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
 
+    /*
+    * 作用：注册BeanDefition
+    * */
+    public void registerBeanDefinition (String name, BeanDefinition beanDefinition) {
+        beanDefinitionMap.put(name, beanDefinition);
+    }
+
+    /*
+    * 作用：获取BeanDefition
+    * */
+    public Object getBean (String name) {
+        if (beanDefinitionMap.containsKey(name)) {
+            return beanDefinitionMap.get(name).getBean();
+        }
+        return null;
+    }
 
 }
